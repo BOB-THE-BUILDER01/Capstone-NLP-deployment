@@ -35,5 +35,4 @@ def predict():
 
 if __name__ == '__main__':
     # i write funny number, but write to whatever you like :)
-    ports = int(os.environ.get('PORT', 30187))
-    app.run(port=ports, debug=False)
+    app.run()
