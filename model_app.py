@@ -5,6 +5,7 @@ from flask import request
 import numpy as np
 import pandas as pd
 import sklearn.linear_model as lm
+import os
 
 
 app = flask.Flask(__name__)
@@ -30,4 +31,5 @@ def predict():
 
 if __name__ == '__main__':
     # i write funny number, but write to whatever you like :)
-    app.run(port=6969, debug=True)
+    ports = int(os.environ.get('PORT', 30187))
+    app.run(port=ports, debug=False)
