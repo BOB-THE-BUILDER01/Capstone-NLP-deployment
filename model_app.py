@@ -12,7 +12,7 @@ app = flask.Flask(__name__)
 
 @app.route("/")
 def condition():
-    print("THIS FUCKING WORKS?")
+    return "<h1> DOES THIS FUCKING WORK ANYMORE???!?</h1>"
 
 @app.route("/predict", methods=['POST'])
 def predict():
@@ -34,5 +34,4 @@ def predict():
     return (flask.jsonify(result))
 
 if __name__ == '__main__':
-    # i write funny number, but write to whatever you like :)
     app.run()
