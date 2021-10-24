@@ -10,6 +10,10 @@ import os
 
 app = flask.Flask(__name__)
 
+@app.route("/")
+def condition():
+    print("THIS FUCKING WORKS?")
+
 @app.route("/predict", methods=['POST'])
 def predict():
     # Get the information that is POSTed, silent ensures any error raises an exception and alarms go off.
