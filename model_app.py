@@ -10,7 +10,7 @@ import os
 
 app = flask.Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def condition():
     return "<h1> DOES THIS FUCKING WORK ANYMORE???!?</h1>"
 
