@@ -1,4 +1,5 @@
 import flask
+from flask import make_response
 import pickle
 import json
 from flask import request
@@ -6,9 +7,10 @@ import numpy as np
 import pandas as pd
 import sklearn.linear_model as lm
 import os
-
+from flask_cors import CORS
 
 app = flask.Flask(__name__)
+CORS(app)
 
 @app.route("/", methods=["GET", "POST"])
 def condition():
@@ -31,7 +33,7 @@ def predict():
     result = model2.predict(tokens)
     
     result = {"result" : result[0]}
-    return (flask.jsonify(result))
+    return make_response(flask.jsonify(result), 200, {'Access-Control-Allow-Origin': 'http://localhost:3000'})
 
 if __name__ == '__main__':
     app.run()
